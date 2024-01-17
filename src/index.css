@@ -319,7 +319,7 @@ i[class*='van-type-'] {
   text-decoration: none;
   color: #4D4D4D;
   font-weight: 500;
-  padding: 5px 20px;
+  padding: 0.3rem 1.3rem;
 }
 
 .host-nav a:hover {
@@ -334,43 +334,44 @@ i[class*='van-type-'] {
 }
 
 .host-vans-list {
-  padding-inline: 26px;
+  padding-inline: 1.7rem;
 }
 
 .host-vans-title {
-  padding-inline: 26px;
+  padding-inline: 1.7rem;
 }
 
 .host-van-single {
   display: flex;
   align-items: center;
   background-color: white;
-  margin-bottom: 15px;
-  padding-block: 18px;
-  padding-left: 24px;
+  margin-bottom: 0.9rem;
+  padding-block: 1.1rem;
+  padding-left: 1.4rem;
 }
 
 .host-van-single > img {
-  height: 70px;
-  border-radius: 5px;
-  margin-right: 17px;
+  height: 4.5rem;
+  border-radius: 0.3rem;
+  margin-right: 1rem;
 }
 
 .host-van-info h3 {
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-block: 10px;
+  margin-block: 0.6rem;
 }
 
 .host-van-info p {
-  margin-block: 10px;
+  margin-block: 0.6rem;
 }
 
+/*** HOST VAN DETAIL ***/
 
 .host-van-detail-layout-container {
   background-color: white;
-  padding: 24px;
-  margin: 30px 26px;
+  padding: 1.5rem;
+  margin: 1.9rem 1.7rem;
 }
 
 .host-van-detail {
@@ -379,42 +380,42 @@ i[class*='van-type-'] {
 }
 
 .host-van-detail > img {
-  height: 160px;
+  height: 10rem;
   border-radius: 5px;
-  margin-right: 20px;
+  margin-right: 1.3rem;
 }
 
 .host-van-detail-info-text > h3 {
-  margin-top: 24px;
-  margin-bottom: 5px;
-  font-size: 26px;
+  margin-top: 1.4rem;
+  margin-bottom: 0.3rem;
+  font-size: 1.6rem;
   font-weight: 700;
 }
 
 .host-van-detail-info-text > h4 {
-  font-size: 20px;
+  font-size: 1.3rem;
   margin-block: 0;
 }
 
 
 .host-van-detail-nav {
   display: flex;
-  margin-block: 25px;
+  margin-block: 1.5rem;
 }
 
 .host-van-detail-nav a {
   text-decoration: none;
   color: #4D4D4D;
   font-weight: 500;
-  padding: 5px 20px;
+  padding: 0.3rem 1.3rem;
 }
 
 .host-van-detail-nav a:first-of-type {
   text-decoration: none;
   color: #4D4D4D;
   font-weight: 500;
-  padding: 5px 15px;
-  margin-left: -15px;
+  padding: 0.3rem 0.9rem;
+  margin-left: -0.9rem;
 }
 
 .host-van-detail-nav a:hover {
@@ -430,24 +431,36 @@ i[class*='van-type-'] {
 
 .host-van-detail-info > h4 {
   font-weight: 700;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
 }
 .host-van-detail-info > h4 > span {
   font-weight: 500;
 }
 
 .host-van-price {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
 .host-van-price > span {
-  font-size: 16px;
+  font-size: 1rem;
   color: #4D4D4D;
 }
 
 .host-van-detail-image {
-  height: 100px;
+  height: 6.5rem;
   border-radius: 5px;
+}
+
+/*** NOT FOUND ***/
+.not-found-container {
+  padding-inline: 2rem;
+}
+
+.not-found-container .link-button {
+  width: 100%;
+  background-color: #161616;
+  color: white;
+  margin: 4rem 0;
 }
