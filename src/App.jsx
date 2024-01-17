@@ -17,6 +17,7 @@ import VanDetailsHost from "./pages/Host/HostDetails.jsx";
 import HostVandetailsLayout from "./pages/Host/HostVandetailsLayout.jsx";
 import HostPricing from "./pages/Host/HostPricing.jsx";
 import HostPhotos from "./pages/Host/HostPhotos.jsx";
+import NotFound from "./components/NotFound.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -37,6 +38,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="about" element={<About />} />
         <Route path="vans" element={<Vans />} />
         <Route path="vans/:id" element={<VanDetail />} />
+        <Route path="*" element={<NotFound/>}/>
       </Route>
     </Routes>
   </BrowserRouter>

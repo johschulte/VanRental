@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 
 function VanDetail() {
   const { id } = useParams();
   const [van, setVan] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     (async () => {
@@ -20,6 +21,14 @@ function VanDetail() {
 
   return (
     <div className="van-detail-container">
+      <Link
+        to={`../?${location.state?.search || ""}`}
+        relative="path"
+        className="back-button"
+      >
+        &larr;{" "}
+        <span>Back to {"the " + location.state?.type || "all"} vans</span>
+      </Link>
       {van ? (
         <div className="van-detail">
           <img src={van.imageUrl} />
