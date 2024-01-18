@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Home from "./pages/Home.jsx";
+import Login from "./pages/Login.jsx";
 import "./index.css";
 import About from "./pages/About.jsx";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -38,7 +39,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="about" element={<About />} />
         <Route path="vans" element={<Vans />} />
         <Route path="vans/:id" element={<VanDetail />} />
-        <Route path="*" element={<NotFound/>}/>
+        <Route path="login" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   </BrowserRouter>

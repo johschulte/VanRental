@@ -1,23 +1,36 @@
 import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import axios from "axios";
+import { getVans } from "../../api";
 
 function Vans() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [vans, setVans] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const typeFilter = searchParams.get("type");
 
   useEffect(() => {
     (async () => {
+      setLoading(true);
       try {
-        const resp = await axios.get("/api/vans/");
-        setVans(resp.data.vans);
-      } catch (error) {
-        console.error(error);
+        const resp = await getVans("/api/vans/");
+        console.log(resp);
+        setVans(resp);
+      } catch (err) {
+        console.log(err);
+        setError(err);
       }
+      setLoading(false);
     })();
   }, []);
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+  if (error) {
+    return <h1>{error.message}</h1>;
+  }
 
   const filteredVans = typeFilter
     ? vans.filter((van) => van.type.toLowerCase() === typeFilter)

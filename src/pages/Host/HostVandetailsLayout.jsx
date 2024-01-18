@@ -2,21 +2,34 @@ import React, { useContext } from "react";
 import { Outlet, NavLink, Link } from "react-router-dom";
 import { useEffect, useState, createContext } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import { getVans } from "../../api";
 
 const HostVandetailsLayout = () => {
   const { id } = useParams();
   const [currentVan, setVans] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
     (async () => {
+      setLoading(true);
       try {
-        const data = await axios.get(`/api/host/vans/${id}`);
-        setVans(data.data.vans[0]);
+        const resp = await getVans(`/api/host/vans/${id}`);
+        setVans(resp[0]);
       } catch (error) {
-        console.error(error);
+        setError(error);
       }
+      setLoading(false);
     })();
   }, []);
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>{error.message}</h1>;
+  }
 
   return (
     <div className="van-detail-container">

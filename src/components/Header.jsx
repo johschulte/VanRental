@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
 
 function Header() {
   return (
@@ -24,6 +25,12 @@ function Header() {
         to="/vans"
       >
         Vans
+      </NavLink>
+      <NavLink
+        className={({ isActive }) => (isActive ? "active-link" : "")}
+        to="/login"
+      >
+        <FaUser />
       </NavLink>
     </header>
   );
