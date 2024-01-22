@@ -19,21 +19,24 @@ import HostVandetailsLayout from "./pages/Host/HostVandetailsLayout.jsx";
 import HostPricing from "./pages/Host/HostPricing.jsx";
 import HostPhotos from "./pages/Host/HostPhotos.jsx";
 import NotFound from "./components/NotFound.jsx";
+import AuthRequired from "./components/AuthRequired.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="host" element={<HostLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="income" element={<Income />} />
-          <Route path="reviews" element={<Reviews />} />
-          <Route path="vans" element={<VansHost />} />
-          <Route path="vans/:id" element={<HostVandetailsLayout />}>
-            <Route index element={<VanDetailsHost />} />
-            <Route path="pricing" element={<HostPricing />} />
-            <Route path="photos" element={<HostPhotos />} />
+        <Route element={<AuthRequired />}>
+          <Route path="host" element={<HostLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="income" element={<Income />} />
+            <Route path="reviews" element={<Reviews />} />
+            <Route path="vans" element={<VansHost />} />
+            <Route path="vans/:id" element={<HostVandetailsLayout />}>
+              <Route index element={<VanDetailsHost />} />
+              <Route path="pricing" element={<HostPricing />} />
+              <Route path="photos" element={<HostPhotos />} />
+            </Route>
           </Route>
         </Route>
         <Route path="about" element={<About />} />
