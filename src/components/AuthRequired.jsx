@@ -11,7 +11,7 @@ const AuthRequired = () => {
 
   return (
     <>
-      <Navigate to="login" state={{ failedRouting: true }} />;
+      <Navigate to="login" state={{ failedRouting: true }} replace />;
     </>
   );
 };
