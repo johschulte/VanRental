@@ -7,14 +7,12 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const { setAuthenticated, authenticated } = useOutletContext();
+  const { setAuthenticated, authenticated, setLoggedIn } = useOutletContext();
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState(null);
 
   const location = useLocation();
   const navigate = useNavigate();
-
-  const { state } = useLocation();
 
   const from = location.state?.from || "/host";
 
@@ -26,6 +24,7 @@ const Login = () => {
         setError(null);
         localStorage.setItem("loggedin", true);
         navigate(from, { replace: true });
+        setLoggedIn(true);
       })
       .catch((err) => {
         setError(err);
@@ -46,7 +45,7 @@ const Login = () => {
   return (
     <>
       <div className="login-container">
-        {state?.failedRouting && (
+        {location.state?.failedRouting && (
           <h3 className="login-first">
             You must logged in, in order to visit the "Host" page.
           </h3>
@@ -69,7 +68,7 @@ const Login = () => {
             value={loginFormData.password}
           />
           <button>Log in</button>
-          <div className="login-switch">
+          {/* <div className="login-switch">
             <p>Switch login state:</p>
             <input
               type="checkbox"
@@ -84,7 +83,7 @@ const Login = () => {
               <p>You are now logged in! </p>
               <p>Try again to visit the "Host" section.</p>
             </>
-          )}
+          )} */}
         </form>
       </div>
     </>

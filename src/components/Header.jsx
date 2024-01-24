@@ -1,8 +1,12 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 
-function Header() {
+function Header({ loggedIn, setLoggedIn }) {
+  function fakeLogOut() {
+    localStorage.removeItem("loggedin");
+    setLoggedIn(false);
+  }
   return (
     <header>
       <Link className="site-logo" to="/">
@@ -32,6 +36,7 @@ function Header() {
       >
         <FaUser />
       </NavLink>
+      {loggedIn && <button onClick={fakeLogOut}>X</button>}
     </header>
   );
 }
