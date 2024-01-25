@@ -1,4 +1,4 @@
-# MemeGen - React Practice App for React Router, Link, NavLink, and Search Params
+# VanRental - React Practice App for React Router, Link, NavLink, and Search Params
 
 This application was built as a practice project to deepen understanding and application of React Router, Link, NavLink, and search params. The app allows users to navigate through different pages and perform searches. It's part of the Scrimba React course.
 
@@ -12,7 +12,7 @@ This application was built as a practice project to deepen understanding and app
 
 - React: Used for building the user interface and managing UI state.
 - JavaScript/JSX: Employed for logic and component design.
-- SCSS: Used to style every component.
+- CSS: Used to style every component.
 
 ## Customization and Further Development
 
